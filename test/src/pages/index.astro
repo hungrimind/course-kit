@@ -9,6 +9,6 @@ const lessons = test.lessons as Section[];
 
 <BaseLayout>
   <div class="w-screen h-screen">
-    <Course id={id} lessons={lessons} canExit={false} client:only="react" />
+    <Course id={id} lessons={lessons} canExit={false} client:load />
   </div>
 </BaseLayout>
