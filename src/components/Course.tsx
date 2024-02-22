@@ -71,17 +71,29 @@ const Course: React.FC<CourseProps> = ({
     undefined
   );
 
-  const [currentIndex, setIndex] = React.useState(0);
   //retrieve the index from cookies and set it to currentIndex
   React.useEffect(() => {
-    let cookieArray =
-      document.cookie
-        .split("; ")
-        .find((row) => row.startsWith(`progress-for-${id}`))
-        ?.split("=")[1]
-        ?.split(",") ?? [];
+    const cookie = document.cookie
+      .split(";")
+      .find((cookie) => cookie.includes(`current-position-for-${id}`));
+    if (cookie) {
+      const currentLessonId = cookie.split("=")[1];
+      // the current lessons don't contain ids within them, once they do this should work
+
+      console.log(lessons.findIndex((l) => l.id == currentLessonId));
+
+      setIndex(lessons.findIndex((l) => l.id == currentLessonId));
+    }
+
+    let cookieArray = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith(`progress-for-${id}`))
+      ?.split("=")[1]
+      .split(",");
     setCookieArray(cookieArray);
-  }, [currentIndex]);
+  }, [lessons]);
+
+  const [currentIndex, setIndex] = React.useState(0);
 
   React.useEffect(() => {
     if (menuOpen) {
@@ -178,7 +190,7 @@ const Course: React.FC<CourseProps> = ({
           setCookieArray={setCookieArray}
         />
         {(() => {
-          switch (lessons[currentIndex]!.sectionType) {
+          switch (lessons[currentIndex].sectionType) {
             case "slide":
               return (
                 <SlideSection
@@ -238,7 +250,7 @@ function BottomNavigation({
   const completeRef = React.useRef<HTMLDivElement>(null);
   const hasPreview =
     content[currentIndex] !== undefined &&
-    "previewImage" in content[currentIndex]!;
+    "previewImage" in content[currentIndex];
 
   React.useEffect(() => {
     document.addEventListener("keydown", function (event) {
@@ -273,8 +285,8 @@ function BottomNavigation({
       cookieArray = [];
     }
 
-    if (!cookieArray.includes(content[currentIndex]!.id.toString())) {
-      cookieArray.push(content[currentIndex]!.id.toString());
+    if (!cookieArray.includes(content[currentIndex].id.toString())) {
+      cookieArray.push(content[currentIndex].id.toString());
       setCookieArray(cookieArray);
     }
 
@@ -285,7 +297,7 @@ function BottomNavigation({
     }
 
     if (
-      content[currentIndex + 1]!.sectionType !== "slide" ||
+      content[currentIndex + 1].sectionType !== "slide" ||
       (content[currentIndex + 1] as SlideSectionProps).previewImage ===
         undefined
     ) {
@@ -296,7 +308,7 @@ function BottomNavigation({
     console.log(content[currentIndex]);
     // the current lessons don't contain ids within them, once they do this should work
     document.cookie = `current-position-for-${courseId}=${
-      content[currentIndex + 1]!.id
+      content[currentIndex + 1].id
     }`;
   }
 
