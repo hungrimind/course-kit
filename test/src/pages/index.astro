@@ -1,0 +1,26 @@
+---
+import { Course, type Section } from "course-kit";
+import test from "../../public/test.json";
+
+const lessons = test.lessons as Section[];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="flex flex-col min-h-screen dark:bg-neutral-950">
+    <div class="w-screen h-screen">
+      <Course
+        id={parseInt(test.id)}
+        lessons={lessons}
+        canExit={false}
+        client:load
+      />
+    </div>
+  </body>
+</html>
