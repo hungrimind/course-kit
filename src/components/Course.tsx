@@ -47,19 +47,19 @@ export type Section =
   | HeaderSectionProps;
 
 export type CourseProps = {
-  id: number;
+  id?: number;
   lessons: Section[];
-  canExit: boolean;
+  canExit?: boolean;
   menuHoverColor?: string;
   menuSelectedColor?: string;
 };
 
 const Course: React.FC<CourseProps> = ({
-  id,
+  id = 0,
   lessons,
-  canExit,
-  menuHoverColor,
-  menuSelectedColor,
+  canExit = false,
+  menuHoverColor = undefined,
+  menuSelectedColor = undefined,
 }) => {
   const [previewOpen, setPreviewOpen] = React.useState<boolean>(false);
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
