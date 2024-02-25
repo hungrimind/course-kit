@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full">
       <div className="w-screen h-screen">
-        <Course lessons={test.lessons as Section[]} />
+        <Course id={0} lessons={test.lessons as Section[]} canExit={false} />
       </div>
     </main>
   );

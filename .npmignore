@@ -1,6 +1,7 @@
 /src
 /node_modules
 /test
+/test-astro
 
 .env
 .DS_Store
