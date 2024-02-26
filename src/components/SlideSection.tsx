@@ -1,4 +1,4 @@
-// import Prism from "prismjs";
+import Prism from "prismjs";
 import "prismjs/components/prism-dart";
 import "prismjs/components/prism-markdown";
 import "prismjs/components/prism-yaml";
@@ -18,12 +18,10 @@ interface SlideSectionPageProps {
 }
 
 const SlideSection: React.FC<SlideSectionPageProps> = (props) => {
-  // might want to listen to a specific state rather than doing it all the time
   useEffect(() => {
-    import("prismjs").then((Prism) => {
-      Prism.default.highlightAll();
-    });
-  }, []);
+    console.log("highlighting in package");
+    Prism.highlightAll();
+  });
 
   return (
     <div className="relative flex h-full w-full">

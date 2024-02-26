@@ -1,6 +1,6 @@
 ---
 import { type Section } from "course-kit";
-import Home from "../component/TestComp";
+import StupidCourse from "../component/TestComp";
 import test from "../test.json";
 
 const lessons = test.lessons as Section[];
@@ -15,6 +15,6 @@ const lessons = test.lessons as Section[];
     <title>Astro</title>
   </head>
   <body>
-    <Home lessons={lessons} client:only="react" />
+    <StupidCourse lessons={lessons} client:only="react" />
   </body>
 </html>

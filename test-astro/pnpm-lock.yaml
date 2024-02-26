@@ -21,11 +21,8 @@ dependencies:
     specifier: ^4.4.4
     version: 4.4.4(typescript@5.3.3)
   course-kit:
-    specifier: ^0.0.22
-    version: 0.0.22
-  prismjs:
-    specifier: ^1.29.0
-    version: 1.29.0
+    specifier: ^0.0.27
+    version: 0.0.27
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2258,8 +2255,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /course-kit@0.0.22:
-    resolution: {integrity: sha512-rgrU2oXKDtLAU110thuKz9PJGHOkOim7kDmNyKC+svds3h58yLQKUrx47RRxlc+/ztq183p/I4OKskiWo3oKRA==}
+  /course-kit@0.0.27:
+    resolution: {integrity: sha512-BIEv5+66aMkFMjLjMGyPMjJXZVYrwu0sVadtnxePr+p4bH72krVPMJQT63+fPXaIJV1IGC9NzrXj/jm9V7e2vA==}
     dependencies:
       '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.2.19)(@types/react@18.2.58)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-avatar': 1.0.4(@types/react-dom@18.2.19)(@types/react@18.2.58)(react-dom@18.2.0)(react@18.2.0)
