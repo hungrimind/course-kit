@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import HeaderSection from "./HeaderSection";
 import SlideSection from "./SlideSection";
-import { buttonVariants } from "./ui/button";
 
 import {
   CheckIcon,
@@ -114,17 +113,11 @@ const Course: React.FC<CourseProps> = ({
         <div className="side-menu-content">
           <div className="py-4 pr-4 pl-2 sticky top-0 border-b dark:border-b-neutral-700 backdrop-blur">
             <div className="flex justify-between">
-              <button
-                onClick={() => setMenuOpen(false)}
-                className={buttonVariants({ variant: "ghost" })}
-              >
+              <button onClick={() => setMenuOpen(false)} className="btn-ghost">
                 <PanelLeftClose size={24} />
               </button>
               {canExit && (
-                <a
-                  href="/courses"
-                  className={buttonVariants({ variant: "ghost" })}
-                >
+                <a href="/courses" className="btn-ghost">
                   <div className="text-red-400">Exit Course</div>
                 </a>
               )}
@@ -323,10 +316,10 @@ function BottomNavigation({
           <button
             data-tooltip-target="tooltip-menu"
             type="button"
-            className={buttonVariants({ variant: "default" })}
+            className="btn-default"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <div className="w-full h-full flex items-center justify-center active:scale-75 transition-transform">
+            <div className="btn-icon">
               <PanelLeftOpen size={28} />
             </div>
             <span className="sr-only">Menu</span>
@@ -335,13 +328,10 @@ function BottomNavigation({
         <button
           data-tooltip-target="tooltip-complete"
           type="button"
-          className={buttonVariants({ variant: "default" })}
+          className="btn-default"
           onClick={onClickComplete}
         >
-          <div
-            ref={completeRef}
-            className="w-full h-full flex items-center justify-center active:scale-75 transition-transform"
-          >
+          <div ref={completeRef} className="btn-icon">
             <CheckIcon size={28} />
           </div>
           <span className="sr-only">Complete</span>
@@ -361,9 +351,9 @@ function BottomNavigation({
               onClick={() => setPreviewOpen(!previewOpen)}
               data-tooltip-target="tooltip-preview"
               type="button"
-              className={buttonVariants({ variant: "default" })}
+              className="btn-default"
             >
-              <div className="w-full h-full flex items-center justify-center active:scale-75 transition-transform">
+              <div className="btn-icon">
                 <Smartphone size={28} />
               </div>
               <span className="sr-only">Preview</span>

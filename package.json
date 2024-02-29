@@ -22,6 +22,7 @@
   "homepage": "https://github.com/hungrimind/course-kit",
   "scripts": {
     "build": "tsup src/index.ts",
+    "watch": "tsup src/index.ts --watch",
     "lint": "tsc"
   },
   "license": "MIT",
