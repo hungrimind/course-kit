@@ -1,25 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.size-default {
+  @apply coursekit-h-10 coursekit-px-4 coursekit-py-2;
+}
 
-@layer base {
-  .size-default {
-    @apply coursekit-h-10 coursekit-px-4 coursekit-py-2;
-  }
+.each-button {
+  @apply coursekit-inline-flex coursekit-items-center coursekit-justify-center coursekit-whitespace-nowrap coursekit-rounded-md coursekit-text-sm coursekit-font-medium coursekit-ring-offset-white coursekit-transition-colors focus-visible:coursekit-outline-none focus-visible:coursekit-ring-2 focus-visible:coursekit-ring-neutral-950 focus-visible:coursekit-ring-offset-2 disabled:coursekit-pointer-events-none disabled:coursekit-opacity-50 dark:coursekit-ring-offset-neutral-950 dark:focus-visible:coursekit-ring-neutral-300;
+}
 
-  .each-button {
-    @apply coursekit-inline-flex coursekit-items-center coursekit-justify-center coursekit-whitespace-nowrap coursekit-rounded-md coursekit-text-sm coursekit-font-medium coursekit-ring-offset-white coursekit-transition-colors focus-visible:coursekit-outline-none focus-visible:coursekit-ring-2 focus-visible:coursekit-ring-neutral-950 focus-visible:coursekit-ring-offset-2 disabled:coursekit-pointer-events-none disabled:coursekit-opacity-50 dark:coursekit-ring-offset-neutral-950 dark:focus-visible:coursekit-ring-neutral-300;
-  }
+.btn-ghost {
+  @apply coursekit-inline-flex coursekit-items-center coursekit-justify-center each-button hover:coursekit-bg-neutral-100 hover:coursekit-text-neutral-900 dark:hover:coursekit-bg-neutral-800 dark:hover:coursekit-text-neutral-50 size-default;
+}
 
-  .btn-ghost {
-    @apply coursekit-inline-flex coursekit-items-center coursekit-justify-center each-button hover:coursekit-bg-neutral-100 hover:coursekit-text-neutral-900 dark:hover:coursekit-bg-neutral-800 dark:hover:coursekit-text-neutral-50 size-default;
-  }
+.btn-default {
+  @apply each-button coursekit-bg-neutral-900 coursekit-text-neutral-50 hover:coursekit-bg-neutral-900/90 dark:coursekit-bg-neutral-50 dark:coursekit-text-neutral-900 dark:hover:coursekit-bg-neutral-50/90 size-default;
+}
 
-  .btn-default {
-    @apply each-button coursekit-bg-neutral-900 coursekit-text-neutral-50 hover:coursekit-bg-neutral-900/90 dark:coursekit-bg-neutral-50 dark:coursekit-text-neutral-900 dark:hover:coursekit-bg-neutral-50/90 size-default;
-  }
-
-  .btn-icon {
-    @apply coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform;
-  }
+.btn-icon {
+  @apply coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform;
 }
