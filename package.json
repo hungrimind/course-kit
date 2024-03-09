@@ -1,6 +1,6 @@
 {
   "name": "course-kit",
-  "version": "0.0.41",
+  "version": "0.0.40",
   "description": "UI Kit for Course Management System",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

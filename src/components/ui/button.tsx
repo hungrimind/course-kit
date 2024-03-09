@@ -5,16 +5,16 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "coursekit-inline-flex coursekit-items-center coursekit-justify-center coursekit-whitespace-nowrap coursekit-rounded-md coursekit-text-sm coursekit-font-medium coursekit-ring-offset-white coursekit-transition-colors focus-visible:coursekit-outline-none focus-visible:coursekit-ring-2 focus-visible:ring-neutral-950 focus-visible:coursekit-ring-offset-2 disabled:coursekit-pointer-events-none disabled:coursekit-opacity-50 dark:coursekit-ring-offset-neutral-950 dark:focus-visible:coursekit-ring-neutral-300",
+  "coursekit-inline-flex coursekit-items-center coursekit-justify-center coursekit-whitespace-nowrap coursekit-rounded-md coursekit-text-sm coursekit-font-medium coursekit-ring-offset-white coursekit-transition-colors focus-visible:coursekit-outline-none focus-visible:coursekit-ring-2 focus-visible:ring-neutral-950 focus-visible:coursekit-ring-offset-2 disabled:coursekit-pointer-events-none disabled:coursekit-opacity-50 dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300",
   {
     variants: {
       variant: {
         default:
           "coursekit-bg-neutral-900 coursekit-text-neutral-50 hover:coursekit-bg-neutral-900/90 dark:coursekit-bg-neutral-50 dark:coursekit-text-neutral-900 dark:hover:coursekit-bg-neutral-50/90",
         destructive:
-          "coursekit-bg-red-500 coursekit-text-neutral-50 hover:coursekit-bg-red-500/90 dark:coursekit-bg-red-900 dark:coursekit-text-neutral-50 dark:hover:coursekit-bg-red-900/90",
+          "coursekit-bg-red-500 coursekit-text-neutral-50 hover:coursekit-bg-red-500/90 dark:coursekit-bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
         outline:
-          "coursekit-border border-neutral-200 coursekit-bg-white hover:coursekit-bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
+          "coursekit-border border-neutral-200 coursekit-bg-white hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         secondary:
           "bg-neutral-100 text-neutral-900 hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         ghost:
