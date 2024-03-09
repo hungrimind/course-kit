@@ -25,14 +25,14 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-neutral-100 data-[state=open]:bg-neutral-100 dark:focus:bg-neutral-800 dark:data-[state=open]:bg-neutral-800",
-      inset && "pl-8",
+      "coursekit-flex coursekit-cursor-default coursekit-select-none coursekit-items-center coursekit-rounded-sm coursekit-px-2 coursekit-py-1.5 coursekit-text-sm coursekit-outline-none focus:bg-neutral-100 data-[state=open]:bg-neutral-100 dark:focus:bg-neutral-800 dark:data-[state=open]:bg-neutral-800",
+      inset && "coursekit-pl-8",
       className
     )}
     {...props}
   >
     {children}
-    <ChevronRight className="ml-auto h-4 w-4" />
+    <ChevronRight className="coursekit-ml-auto coursekit-h-4 coursekit-w-4" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
 DropdownMenuSubTrigger.displayName =
@@ -45,7 +45,7 @@ const DropdownMenuSubContent = React.forwardRef<
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-200 bg-white p-1 text-neutral-950 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50",
+      "coursekit-z-50 min-w-[8rem] coursekit-overflow-hidden coursekit-rounded-md coursekit-border border-neutral-200 coursekit-bg-white coursekit-p-1 text-neutral-950 coursekit-shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50",
       className
     )}
     {...props}
@@ -63,7 +63,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-200 bg-white p-1 text-neutral-950 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50",
+        "coursekit-z-50 min-w-[8rem] coursekit-overflow-hidden coursekit-rounded-md coursekit-border border-neutral-200 coursekit-bg-white coursekit-p-1 text-neutral-950 coursekit-shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50",
         className
       )}
       {...props}
@@ -81,8 +81,8 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
-      inset && "pl-8",
+      "coursekit-relative coursekit-flex coursekit-cursor-default coursekit-select-none coursekit-items-center coursekit-rounded-sm coursekit-px-2 coursekit-py-1.5 coursekit-text-sm coursekit-outline-none coursekit-transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:coursekit-pointer-events-none data-[disabled]:coursekit-opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
+      inset && "coursekit-pl-8",
       className
     )}
     {...props}
@@ -97,15 +97,15 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
+      "coursekit-relative coursekit-flex coursekit-cursor-default coursekit-select-none coursekit-items-center coursekit-rounded-sm coursekit-py-1.5 coursekit-pl-8 coursekit-pr-2 coursekit-text-sm coursekit-outline-none coursekit-transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:coursekit-pointer-events-none data-[disabled]:coursekit-opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
       className
     )}
     checked={checked}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="coursekit-absolute coursekit-left-2 coursekit-flex coursekit-h-3.5 coursekit-w-3.5 coursekit-items-center coursekit-justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="coursekit-h-4 coursekit-w-4" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -121,14 +121,14 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
+      "coursekit-relative coursekit-flex coursekit-cursor-default coursekit-select-none coursekit-items-center coursekit-rounded-sm coursekit-py-1.5 coursekit-pl-8 coursekit-pr-2 coursekit-text-sm coursekit-outline-none coursekit-transition-colors focus:bg-neutral-100 focus:text-neutral-900 data-[disabled]:coursekit-pointer-events-none data-[disabled]:coursekit-opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
       className
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="coursekit-absolute coursekit-left-2 coursekit-flex coursekit-h-3.5 coursekit-w-3.5 coursekit-items-center coursekit-justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" />
+        <Circle className="coursekit-h-2 coursekit-w-2 coursekit-fill-current" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -145,8 +145,8 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
-      inset && "pl-8",
+      "coursekit-px-2 coursekit-py-1.5 coursekit-text-sm coursekit-font-semibold",
+      inset && "coursekit-pl-8",
       className
     )}
     {...props}
@@ -161,7 +161,7 @@ const DropdownMenuSeparator = React.forwardRef<
   <DropdownMenuPrimitive.Separator
     ref={ref}
     className={cn(
-      "-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-800",
+      "coursekit--mx-1 coursekit-my-1 coursekit-h-px bg-neutral-100 dark:bg-neutral-800",
       className
     )}
     {...props}
@@ -175,7 +175,7 @@ const DropdownMenuShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
+      className={cn("coursekit-ml-auto coursekit-text-xs coursekit-tracking-widest coursekit-opacity-60", className)}
       {...props}
     />
   );

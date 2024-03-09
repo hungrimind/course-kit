@@ -31,7 +31,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   /* background: hsl(230, 1%, 98%); */
-  @apply bg-neutral-50;
+  @apply coursekit-bg-neutral-50;
   color: hsl(230, 8%, 24%);
   font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
     monospace;
@@ -469,7 +469,7 @@ pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
   code[class*="language-"],
   pre[class*="language-"] {
     /* background: hsl(220, 13%, 18%); */
-    @apply bg-neutral-900;
+    @apply coursekit-bg-neutral-900;
     color: hsl(220, 14%, 71%);
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",

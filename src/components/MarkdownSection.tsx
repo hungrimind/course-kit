@@ -5,8 +5,8 @@ import type { MarkdownSectionProps } from "./Course"
 
 const MarkdownSection: React.FC<MarkdownSectionProps> = (props) => {
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center text-center">
-      <Markdown className="md:w-1/2" rehypePlugins={[rehypeRaw]}>
+    <div className="coursekit-h-full coursekit-w-full coursekit-flex coursekit-flex-col coursekit-justify-center coursekit-items-center coursekit-text-center">
+      <Markdown className="md:coursekit-w-1/2" rehypePlugins={[rehypeRaw]}>
         {props.content}
       </Markdown>
     </div>
