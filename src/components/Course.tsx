@@ -308,71 +308,69 @@ function BottomNavigation({
   }
 
   return (
-    <div
-      className={`coursekit-absolute coursekit-z-50 coursekit-bottom-2 coursekit-left-2 coursekit-p-4`}
-    >
-      <div
-        className={`coursekit-flex coursekit-h-full coursekit-items-center coursekit-justify-center coursekit-space-x-4 coursekit-rounded`}
-      >
-        {!menuOpen && (
-          <button
-            data-tooltip-target="tooltip-menu"
-            type="button"
-            className="btn-default"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <div className="coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform">
-              <PanelLeftOpen size={28} />
-            </div>
-            <span className="coursekit-sr-only">Menu</span>
-          </button>
-        )}
-        <button
-          data-tooltip-target="tooltip-complete"
-          type="button"
-          className="btn-default"
-          onClick={onClickComplete}
-        >
-          <div
-            ref={completeRef}
-            className="coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform"
-          >
-            <CheckIcon size={28} />
-          </div>
-          <span className="coursekit-sr-only">Complete</span>
-        </button>
-        <div
-          id="tooltip-complete"
-          role="tooltip"
-          className="coursekit-absolute coursekit-z-10 coursekit-invisible coursekit-inline-block coursekit-px-3 coursekit-py-2 coursekit-text-sm coursekit-font-medium coursekit-text-white coursekit-transition-opacity coursekit-duration-300 coursekit-bg-neutral-900 coursekit-rounded-lg coursekit-shadow-sm coursekit-opacity-0 tooltip dark:coursekit-bg-neutral-700"
-        >
-          Complete
-          <div className="tooltip-arrow" data-popper-arrow></div>
-        </div>
-
-        {hasPreview && (
-          <>
+    <div className="coursekit-absolute coursekit-bottom-16 coursekit-left-8 coursekit-z-50">
+      <div className="coursekit-fixed">
+        <div className="coursekit-flex coursekit-h-full coursekit-items-center coursekit-justify-center coursekit-space-x-4 coursekit-rounded">
+          {!menuOpen && (
             <button
-              onClick={() => setPreviewOpen(!previewOpen)}
-              data-tooltip-target="tooltip-preview"
+              data-tooltip-target="tooltip-menu"
               type="button"
               className="btn-default"
+              onClick={() => setMenuOpen(!menuOpen)}
             >
               <div className="coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform">
-                <Smartphone size={28} />
+                <PanelLeftOpen size={28} />
               </div>
-              <span className="coursekit-sr-only">Preview</span>
+              <span className="coursekit-sr-only">Menu</span>
             </button>
+          )}
+          <button
+            data-tooltip-target="tooltip-complete"
+            type="button"
+            className="btn-default"
+            onClick={onClickComplete}
+          >
             <div
-              id="tooltip-preview"
-              role="tooltip"
-              className="coursekit-absolute coursekit-z-10 coursekit-invisible coursekit-inline-block coursekit-px-3 coursekit-py-2 coursekit-text-sm coursekit-font-medium coursekit-text-white coursekit-transition-opacity coursekit-duration-300 coursekit-bg-neutral-900 coursekit-rounded-lg coursekit-shadow-sm coursekit-opacity-0 tooltip dark:coursekit-bg-neutral-700"
+              ref={completeRef}
+              className="coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform"
             >
-              Preview
-              <div className="tooltip-arrow" data-popper-arrow></div>
+              <CheckIcon size={28} />
             </div>
-          </>
-        )}
+            <span className="coursekit-sr-only">Complete</span>
+          </button>
+          <div
+            id="tooltip-complete"
+            role="tooltip"
+            className="coursekit-absolute coursekit-z-10 coursekit-invisible coursekit-inline-block coursekit-px-3 coursekit-py-2 coursekit-text-sm coursekit-font-medium coursekit-text-white coursekit-transition-opacity coursekit-duration-300 coursekit-bg-neutral-900 coursekit-rounded-lg coursekit-shadow-sm coursekit-opacity-0 tooltip dark:coursekit-bg-neutral-700"
+          >
+            Complete
+            <div className="tooltip-arrow" data-popper-arrow></div>
+          </div>
+
+          {hasPreview && (
+            <>
+              <button
+                onClick={() => setPreviewOpen(!previewOpen)}
+                data-tooltip-target="tooltip-preview"
+                type="button"
+                className="btn-default"
+              >
+                <div className="coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform">
+                  <Smartphone size={28} />
+                </div>
+                <span className="coursekit-sr-only">Preview</span>
+              </button>
+              <div
+                id="tooltip-preview"
+                role="tooltip"
+                className="coursekit-absolute coursekit-z-10 coursekit-invisible coursekit-inline-block coursekit-px-3 coursekit-py-2 coursekit-text-sm coursekit-font-medium coursekit-text-white coursekit-transition-opacity coursekit-duration-300 coursekit-bg-neutral-900 coursekit-rounded-lg coursekit-shadow-sm coursekit-opacity-0 tooltip dark:coursekit-bg-neutral-700"
+              >
+                Preview
+                <div className="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
