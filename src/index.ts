@@ -1,6 +1,7 @@
 import Prism from "prismjs";
 import "./customprism.css";
 import "./global.css";
+import "./prism-line-highlight.css";
 
 Prism.highlightAll();
 
