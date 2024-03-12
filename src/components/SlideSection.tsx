@@ -26,7 +26,9 @@ const SlideSection: React.FC<SlideSectionPageProps> = (props) => {
     <div className="coursekit-relative coursekit-flex coursekit-h-full coursekit-w-full">
       <div
         className={`${
-          props.previewOpen ? "backdrop-blur" : "coursekit-opacity-0 coursekit-hidden"
+          props.previewOpen
+            ? "coursekit-backdrop-blur"
+            : "coursekit-opacity-0 coursekit-hidden"
         } coursekit-transition-opacity coursekit-absolute coursekit-w-full coursekit-h-full coursekit-z-10`}
       ></div>
       <section className="coursekit-hidden sm:coursekit-flex coursekit-w-full">
@@ -51,7 +53,9 @@ const DesktopView: React.FC<ViewProps> = ({ content, previewOpen }) => {
   return (
     <div className="coursekit-flex coursekit-overflow-y-auto coursekit-h-full coursekit-w-full coursekit-items-center coursekit-relative">
       <div className="content-section coursekit-w-1/2 coursekit-my-auto coursekit-py-16">
-        <h2 className="coursekit-px-4 coursekit-text-4xl coursekit-font-bold">{content.heading}</h2>
+        <h2 className="coursekit-px-4 coursekit-text-4xl coursekit-font-bold">
+          {content.heading}
+        </h2>
         <p className="coursekit-px-4">
           <Markdown rehypePlugins={[rehypeRaw]}>{content.content}</Markdown>
         </p>
@@ -86,11 +90,13 @@ const MobileView: React.FC<ViewProps> = ({ content }) => {
       <div className="content-section coursekit-overflow-hidden">
         <div>
           <h2
-            className={`px-4 coursekit-text-4xl coursekit-font-bold sm:coursekit-transition-opacity coursekit-duration-500`}
+            className={`coursekit-px-4 coursekit-text-4xl coursekit-font-bold sm:coursekit-transition-opacity coursekit-duration-500`}
           >
             {content?.heading}
           </h2>
-          <p className={`px-4 sm:coursekit-transition-opacity coursekit-duration-500 `}>
+          <p
+            className={`coursekit-px-4 sm:coursekit-transition-opacity coursekit-duration-500 `}
+          >
             <Markdown rehypePlugins={[rehypeRaw]}>{content?.content}</Markdown>
           </p>
           <div className="coursekit-h-96"></div>
@@ -142,16 +148,18 @@ function CodeImageThing({ content }: CodeImageThingProps) {
               return (
                 <div className="coursekit-overflow-y-auto coursekit-h-full coursekit-text-white coursekit-flex coursekit-flex-col">
                   {content?.file !== undefined && (
-                    <div className=" dark:bg-neutral-900 coursekit-text-black dark:coursekit-text-white coursekit-px-4 coursekit-py-1">
+                    <div className=" dark:coursekit-bg-neutral-900 coursekit-text-black dark:coursekit-text-white coursekit-px-4 coursekit-py-1">
                       {content.file}
                     </div>
                   )}
                   <pre
-                    className="line-numbers coursekit-flex-1"
+                    className="line-numbers coursekit-pl-0 coursekit-flex-1"
                     data-line={content.highlight ?? ""}
                   >
                     <code
-                      className={`pl-0 ${highlightTranslator(content.type)}`}
+                      className={`coursekit-pl-0 ${highlightTranslator(
+                        content.type
+                      )}`}
                     >
                       {content.value}
                     </code>

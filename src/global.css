@@ -23,3 +23,137 @@
     @apply coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform;
   }
 }
+b {
+  @apply coursekit-font-bold;
+}
+
+p {
+  @apply coursekit-mb-2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply coursekit-leading-tight coursekit-mb-1 coursekit-pb-2;
+}
+h1 {
+  @apply coursekit-text-5xl;
+}
+h2 {
+  @apply coursekit-text-4xl;
+}
+h3 {
+  @apply coursekit-text-2xl;
+}
+h4 {
+  @apply coursekit-text-xl;
+}
+h5 {
+  @apply coursekit-text-lg;
+}
+strong,
+.prose p {
+  @apply coursekit-mb-2;
+}
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+input {
+  font-size: 16px;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+code {
+  @apply coursekit-bg-gray-200 dark:coursekit-bg-gray-700 coursekit-px-2 coursekit-py-1 coursekit-rounded-md;
+}
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+  margin: 1.5em 0;
+}
+pre code {
+  @apply coursekit-bg-transparent dark:coursekit-bg-transparent coursekit-pl-0;
+}
+blockquote {
+  @apply coursekit-border-l-4 coursekit-border-black dark:coursekit-border-white coursekit-pl-4;
+}
+hr {
+  @apply coursekit-border-none coursekit-border-t coursekit-border-gray-200;
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
+
+
+.content-section p {
+  @apply coursekit-leading-7;
+}
+
+.content-section a {
+  @apply coursekit-text-blue-500;
+}
+
+.content-section ul {
+  list-style-type: disc;
+  @apply coursekit-leading-5 coursekit-ml-4;
+}
+
+.content-section ol {
+  list-style-type: decimal;
+  @apply coursekit-leading-5 coursekit-ml-4;
+}
+
+.content-section pre {
+  @apply coursekit-bg-gray-100 dark:coursekit-bg-gray-800 coursekit-rounded-md coursekit-p-4;
+}
+
+.content-section h1,
+.content-section h2,
+.content-section h3,
+.content-section h4,
+.content-section h5,
+.content-section h6 {
+  @apply coursekit-pb-8;
+}
+
+.content-section blockquote {
+  @apply coursekit-bg-gray-100 dark:coursekit-bg-gray-800 coursekit-my-4 coursekit-p-4;
+}
+
+.content-section code {
+  @apply coursekit-text-sm;
+}
+
+.content-section ul {
+  @apply coursekit-mb-4;
+}
