@@ -2,9 +2,8 @@
 module.exports = {
   prefix: "coursekit-",
   content: ["./src/**/*.tsx"],
-  theme: {
-    extend: {},
+  corePlugins: {
+    preflight: false,
   },
   plugins: [],
 }
-

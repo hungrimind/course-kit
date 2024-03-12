@@ -51,6 +51,7 @@ export type CourseProps = {
   canExit?: boolean;
   menuHoverColor?: string;
   menuSelectedColor?: string;
+  onIndexChange?: (index: number) => void;
 };
 
 export const Course: React.FC<CourseProps> = ({
@@ -59,6 +60,7 @@ export const Course: React.FC<CourseProps> = ({
   canExit,
   menuHoverColor,
   menuSelectedColor,
+  onIndexChange,
 }) => {
   const [previewOpen, setPreviewOpen] = React.useState<boolean>(false);
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
@@ -102,6 +104,12 @@ export const Course: React.FC<CourseProps> = ({
       });
     }
   }, [menuOpen, listItemRef, currentIndex]);
+
+  React.useEffect(() => {
+    if (onIndexChange) {
+      onIndexChange(currentIndex);
+    }
+  }, [currentIndex]);
 
   return (
     <div className="coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative">

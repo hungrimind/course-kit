@@ -3,7 +3,6 @@ import "prismjs/components/prism-dart";
 import "prismjs/components/prism-markdown";
 import "prismjs/components/prism-yaml";
 import "prismjs/plugins/line-highlight/prism-line-highlight";
-import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 import React, { useEffect } from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
