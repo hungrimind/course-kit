@@ -123,7 +123,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
 
   return (
     <div className="coursekit-sticky coursekit-top-0 coursekit-h-full sm:coursekit-block sm:coursekit-w-1/2">
-      <div className="coursekit-overflow-visible coursekit-h-full bg-neutral-50 dark:bg-neutral-900 coursekit-relative coursekit-rounded-xl">
+      <div className="coursekit-overflow-visible coursekit-h-full coursekit-bg-neutral-50 dark:coursekit-bg-neutral-900 coursekit-relative coursekit-rounded-xl">
         {(() => {
           switch (content?.type) {
             case "image":

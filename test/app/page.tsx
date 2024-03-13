@@ -1,6 +1,6 @@
 "use client";
 
-import { Course, Section } from "course-kit";
+import { Course, type Section } from "course-kit";
 import "course-kit/dist/index.css";
 import test from "./test.json";
 

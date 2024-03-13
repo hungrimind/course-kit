@@ -69,7 +69,7 @@ export const Course: React.FC<CourseProps> = ({
   const divRef = React.useRef<HTMLDivElement>(null);
 
   const [cookieArray, setCookieArray] = React.useState<string[] | undefined>(
-    undefined,
+    undefined
   );
 
   //retrieve the index from cookies and set it to currentIndex
@@ -112,7 +112,7 @@ export const Course: React.FC<CourseProps> = ({
   }, [currentIndex]);
 
   return (
-    <div className="coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative">
+    <div className="coursekit-bg-neutral-50 dark:coursekit-bg-neutral-950 coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative">
       <div
         className={`coursekit-w-[350px] coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity ${
           menuOpen
