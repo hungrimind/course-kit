@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 @layer base {
+
   .size-default {
     @apply coursekit-h-10 coursekit-px-4 coursekit-py-2;
   }
