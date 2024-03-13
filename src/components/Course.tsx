@@ -51,6 +51,7 @@ export type CourseProps = {
   canExit?: boolean;
   menuHoverColor?: string;
   menuSelectedColor?: string;
+  darkMode?: boolean;
   onIndexChange?: (index: number) => void;
 };
 
@@ -60,6 +61,7 @@ export const Course: React.FC<CourseProps> = ({
   canExit,
   menuHoverColor,
   menuSelectedColor,
+  darkMode,
   onIndexChange,
 }) => {
   const [previewOpen, setPreviewOpen] = React.useState<boolean>(false);
@@ -67,10 +69,16 @@ export const Course: React.FC<CourseProps> = ({
   const listItemRef = useRef<HTMLButtonElement>(null);
 
   const divRef = React.useRef<HTMLDivElement>(null);
+  const courseRef = React.useRef<HTMLDivElement>(null);
 
   const [cookieArray, setCookieArray] = React.useState<string[] | undefined>(
     undefined
   );
+  React.useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("coursekit-dark");
+    }
+  }, []);
 
   //retrieve the index from cookies and set it to currentIndex
   React.useEffect(() => {
@@ -112,7 +120,11 @@ export const Course: React.FC<CourseProps> = ({
   }, [currentIndex]);
 
   return (
-    <div className="coursekit-bg-neutral-50 dark:coursekit-bg-neutral-950 coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative">
+    <div
+      ref={courseRef}
+      id="course-component"
+      className="coursekit-bg-neutral-50 dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
+    >
       <div
         className={`coursekit-w-[350px] coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity ${
           menuOpen
