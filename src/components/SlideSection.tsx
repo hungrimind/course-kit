@@ -6,8 +6,8 @@ import "prismjs/plugins/line-highlight/prism-line-highlight";
 import React, { useEffect } from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import { X } from "lucide-react";
 
+import { X } from "lucide-react";
 import "../customprism.css";
 import type { SlideSectionProps } from "./Course";
 
@@ -134,7 +134,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
 
   return (
     <div className="coursekit-sticky coursekit-top-0 coursekit-h-full sm:coursekit-block sm:coursekit-w-1/2">
-      <div className="coursekit-overflow-visible coursekit-h-full coursekit-bg-neutral-50 dark:coursekit-bg-neutral-900 coursekit-relative coursekit-rounded-xl">
+      <div className="coursekit-overflow-visible coursekit-h-full  coursekit-relative coursekit-rounded-xl">
         {(() => {
           switch (content?.type) {
             case "image":
@@ -159,7 +159,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
               return (
                 <div className="coursekit-overflow-y-auto coursekit-h-full coursekit-text-white coursekit-flex coursekit-flex-col">
                   {content?.file !== undefined && (
-                    <div className=" dark:coursekit-bg-neutral-900 coursekit-text-black dark:coursekit-text-white coursekit-px-4 coursekit-py-1">
+                    <div className=" coursekit-text-black dark:coursekit-text-white coursekit-px-4 coursekit-py-1">
                       {content.file}
                     </div>
                   )}
@@ -169,7 +169,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
                   >
                     <code
                       className={`coursekit-pl-0 ${highlightTranslator(
-                        content.type,
+                        content.type
                       )}`}
                     >
                       {content.value}
