@@ -114,7 +114,7 @@ export const Course: React.FC<CourseProps> = ({
   return (
     <div
       id="course-component"
-      className="coursekit-bg-neutral-50 dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
+      className="coursekit-bg-white dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
     >
       <div
         className={`coursekit-w-[350px] coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity ${
