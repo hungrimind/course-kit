@@ -6,6 +6,7 @@ import "prismjs/plugins/line-highlight/prism-line-highlight";
 import React, { useEffect } from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { X } from "lucide-react";
 
 import "../customprism.css";
 import type { SlideSectionProps } from "./Course";
@@ -49,7 +50,11 @@ const SlideSection: React.FC<SlideSectionPageProps> = (props) => {
   );
 };
 
-const DesktopView: React.FC<ViewProps> = ({ content, previewOpen }) => {
+const DesktopView: React.FC<ViewProps> = ({
+  content,
+  previewOpen,
+  setPreviewOpen,
+}) => {
   return (
     <div className="coursekit-flex coursekit-overflow-y-auto coursekit-h-full coursekit-w-full coursekit-items-center coursekit-relative">
       <div className="content-section coursekit-w-1/2 coursekit-my-auto coursekit-py-16">
@@ -66,10 +71,16 @@ const DesktopView: React.FC<ViewProps> = ({ content, previewOpen }) => {
       <div
         className={`${
           previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
-        } coursekit-transition-transform coursekit-absolute coursekit-left-0 coursekit-right-0 coursekit-bottom-0 coursekit-top-0 coursekit-z-100 coursekit-flex coursekit-justify-center coursekit-items-center coursekit-z-20`}
+        } coursekit-absolute coursekit-left-0 coursekit-right-0 coursekit-bottom-0 coursekit-top-0 coursekit-flex coursekit-justify-center coursekit-items-center coursekit-z-20`}
       >
+        <X
+          onClick={() => setPreviewOpen(!previewOpen)}
+          className="coursekit-z-20 coursekit-absolute coursekit-top-4 coursekit-right-4 hover:coursekit-cursor-pointer"
+        ></X>
         <img
-          className="coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5"
+          className={`${
+            previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
+          } coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5 coursekit-transition-transform `}
           src={`../../../${content?.previewImage}`}
           alt="Preview"
         />
@@ -158,7 +169,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
                   >
                     <code
                       className={`coursekit-pl-0 ${highlightTranslator(
-                        content.type
+                        content.type,
                       )}`}
                     >
                       {content.value}
