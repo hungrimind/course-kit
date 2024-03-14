@@ -904,7 +904,7 @@ pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
 
 @media (prefers-color-scheme: dark) {
   #course-component {
-    @apply coursekit-dark coursekit-bg-black;
+    @apply coursekit-dark coursekit-bg-neutral-950;
   }
 
 
