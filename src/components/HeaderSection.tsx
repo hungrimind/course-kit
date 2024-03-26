@@ -6,12 +6,18 @@ import type { HeaderSectionProps } from "./Course";
 const HeaderSection: React.FC<HeaderSectionProps> = (props) => {
   return (
     <div>
-      <div className="coursekit-flex coursekit-flex-col coursekit-items-center coursekit-w-full coursekit-text-center container">
-        <div className="coursekit-text-6xl coursekit-font-bold coursekit-pt-16">{props.headline}</div>
+      <div className="coursekit-flex coursekit-flex-col coursekit-items-center coursekit-w-full coursekit-text-center container coursekit-pb-16">
+        <div className="coursekit-text-6xl coursekit-font-bold coursekit-pt-16">
+          {props.headline}
+        </div>
         <p className="coursekit-mt-4 coursekit-text-2xl">{props.subheadline}</p>
         <img
           className="coursekit-pt-16 coursekit-w-full"
-          src={`https://hungrimind.com/${props.image}`}
+          src={
+            props.image.startsWith("http")
+              ? props.image
+              : `https://hungrimind.com/${props.image}`
+          }
         />
         <div className="md:coursekit-w-1/2 text-start">
           <Markdown rehypePlugins={[rehypeRaw]}>{props.content}</Markdown>
@@ -38,7 +44,10 @@ const HeaderSection: React.FC<HeaderSectionProps> = (props) => {
             </a>
           ))}
         </div>
-        <p id="setup" className="coursekit-mt-16 coursekit-pb-8 coursekit-text-2xl">
+        <p
+          id="setup"
+          className="coursekit-mt-16 coursekit-pb-8 coursekit-text-2xl"
+        >
           ⬅ Click the check button to get started
         </p>
       </div>

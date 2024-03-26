@@ -81,7 +81,11 @@ const DesktopView: React.FC<ViewProps> = ({
           className={`${
             previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
           } coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5 coursekit-transition-transform `}
-          src={`../../../${content?.previewImage}`}
+          src={
+            content?.previewImage?.startsWith("http") ?? ""
+              ? content?.previewImage
+              : `../../../${content?.previewImage}`
+          }
           alt="Preview"
         />
       </div>
@@ -95,10 +99,14 @@ interface ViewProps {
   setPreviewOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MobileView: React.FC<ViewProps> = ({ content }) => {
+const MobileView: React.FC<ViewProps> = ({
+  content,
+  previewOpen,
+  setPreviewOpen,
+}) => {
   return (
     <>
-      <div className="content-section coursekit-overflow-hidden">
+      <div className="content-section coursekit-overflow-hidden coursekit-p-4">
         <div>
           <h2
             className={`coursekit-px-4 coursekit-text-4xl coursekit-font-bold sm:coursekit-transition-opacity coursekit-duration-500`}
@@ -110,11 +118,32 @@ const MobileView: React.FC<ViewProps> = ({ content }) => {
           >
             <Markdown rehypePlugins={[rehypeRaw]}>{content?.content}</Markdown>
           </p>
-          <div className="coursekit-h-96"></div>
+          <div className="coursekit-h-16"></div>
         </div>
       </div>
 
       <CodeImageThing content={content}></CodeImageThing>
+      <div
+        className={`${
+          previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
+        } coursekit-absolute coursekit-left-0 coursekit-right-0 coursekit-bottom-0 coursekit-top-0 coursekit-flex coursekit-justify-center coursekit-items-center coursekit-z-20`}
+      >
+        <X
+          onClick={() => setPreviewOpen(!previewOpen)}
+          className="coursekit-z-20 coursekit-absolute coursekit-top-4 coursekit-right-4 hover:coursekit-cursor-pointer"
+        ></X>
+        <img
+          className={`${
+            previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
+          } coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5  coursekit-max-h-4/5 coursekit-object-contain `}
+          src={
+            content?.previewImage?.startsWith("http") ?? ""
+              ? content?.previewImage
+              : `../../../${content?.previewImage}`
+          }
+          alt="Preview"
+        />
+      </div>
     </>
   );
 };
@@ -133,16 +162,20 @@ function CodeImageThing({ content }: CodeImageThingProps) {
   }
 
   return (
-    <div className="coursekit-sticky coursekit-top-0 coursekit-h-full sm:coursekit-block sm:coursekit-w-1/2">
-      <div className="coursekit-overflow-visible coursekit-h-full  coursekit-relative coursekit-rounded-xl">
+    <div className="coursekit-sticky coursekit-top-0 sm:coursekit-block sm:coursekit-w-1/2 coursekit-pb-16">
+      <div className="coursekit-overflow-visible coursekit-relative coursekit-rounded-xl">
         {(() => {
           switch (content?.type) {
             case "image":
               return (
-                <div className="coursekit-flex coursekit-justify-center coursekit-items-center coursekit-p-4 coursekit-mb-20 coursekit-h-full">
+                <div className="coursekit-flex coursekit-justify-center coursekit-items-center coursekit-p-4 coursekit-mb-20 ">
                   <img
                     className="coursekit-object-contain coursekit-max-h-full coursekit-rounded-xl"
-                    src={`/${content.value}`}
+                    src={
+                      content.value.startsWith("http")
+                        ? content.value
+                        : `/${content.value}`
+                    }
                     alt="Comment"
                   />
                 </div>

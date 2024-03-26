@@ -117,11 +117,11 @@ export const Course: React.FC<CourseProps> = ({
       className="coursekit-bg-white dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
     >
       <div
-        className={`coursekit-w-[350px] coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity ${
+        className={`sm:coursekit-w-[350px] sm:coursekit-z-0 sm:coursekit-relative coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity  ${
           menuOpen
             ? "coursekit-opacity-100 coursekit-block"
             : "coursekit-opacity-0 coursekit-hidden"
-        }`}
+        } coursekit-fixed coursekit-z-50 coursekit-h-full coursekit-w-full coursekit-bg-white dark:coursekit-bg-neutral-950 `}
       >
         <div className="side-menu-content">
           <div className="coursekit-py-4 coursekit-pr-4 coursekit-pl-2 coursekit-sticky coursekit-top-0 coursekit-border-b dark:coursekit-border-b-neutral-700 coursekit-backdrop-blur">
@@ -143,6 +143,13 @@ export const Course: React.FC<CourseProps> = ({
                   onClick={() => {
                     setIndex(index);
                     document.cookie = `current-position-for-${id}=${section.id}`;
+
+                    setPreviewOpen(false);
+
+                    // if screen is small, close the menu
+                    if (window.innerWidth < 640) {
+                      setMenuOpen(false);
+                    }
                   }}
                   ref={index === currentIndex ? listItemRef : undefined}
                   className={`coursekit-block coursekit-w-full coursekit-p-2 coursekit-text-left ${
@@ -319,7 +326,7 @@ function BottomNavigation({
   }
 
   return (
-    <div className="coursekit-absolute coursekit-bottom-16 coursekit-left-8 coursekit-z-50">
+    <div className="coursekit-absolute coursekit-bottom-16 coursekit-left-8 coursekit-z-40">
       <div className="coursekit-fixed">
         <div className="coursekit-flex coursekit-h-full coursekit-items-center coursekit-justify-center coursekit-space-x-4 coursekit-rounded">
           {!menuOpen && (
