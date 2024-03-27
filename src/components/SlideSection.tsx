@@ -114,7 +114,7 @@ const MobileView: React.FC<ViewProps> = ({
             {content?.heading}
           </h2>
           <p
-            className={`coursekit-px-4 sm:coursekit-transition-opacity coursekit-duration-500 `}
+            className={`coursekit-px-4 coursekit-pb-16 sm:coursekit-transition-opacity coursekit-duration-500 `}
           >
             <Markdown rehypePlugins={[rehypeRaw]}>{content?.content}</Markdown>
           </p>
@@ -162,13 +162,13 @@ function CodeImageThing({ content }: CodeImageThingProps) {
   }
 
   return (
-    <div className="coursekit-sticky coursekit-top-0 sm:coursekit-block sm:coursekit-w-1/2 coursekit-pb-16">
-      <div className="coursekit-overflow-visible coursekit-relative coursekit-rounded-xl">
+    <div className="coursekit-sticky coursekit-top-0 coursekit-h-full sm:coursekit-block sm:coursekit-w-1/2 coursekit-pb-16 sm:coursekit-pb-0">
+      <div className="coursekit-overflow-visible coursekit-relative coursekit-h-full coursekit-rounded-xl">
         {(() => {
           switch (content?.type) {
             case "image":
               return (
-                <div className="coursekit-flex coursekit-justify-center coursekit-items-center coursekit-p-4 coursekit-mb-20 ">
+                <div className="coursekit-flex coursekit-h-full  coursekit-justify-center coursekit-items-center coursekit-p-4 coursekit-mb-20 ">
                   <img
                     className="coursekit-object-contain coursekit-max-h-full coursekit-rounded-xl"
                     src={
