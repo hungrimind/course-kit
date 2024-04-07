@@ -49,6 +49,7 @@ export type CourseProps = {
   id: number;
   lessons: Section[];
   canExit?: boolean;
+  canScroll?: boolean;
   menuHoverColor?: string;
   menuSelectedColor?: string;
   onIndexChange?: (index: number) => void;
@@ -58,6 +59,7 @@ export const Course: React.FC<CourseProps> = ({
   id,
   lessons,
   canExit,
+  canScroll,
   menuHoverColor,
   menuSelectedColor,
   onIndexChange,
@@ -69,7 +71,7 @@ export const Course: React.FC<CourseProps> = ({
   const divRef = React.useRef<HTMLDivElement>(null);
 
   const [cookieArray, setCookieArray] = React.useState<string[] | undefined>(
-    undefined
+    undefined,
   );
 
   //retrieve the index from cookies and set it to currentIndex
@@ -97,6 +99,8 @@ export const Course: React.FC<CourseProps> = ({
   const [currentIndex, setIndex] = React.useState(0);
 
   React.useEffect(() => {
+    if (canScroll === false) return;
+
     if (menuOpen) {
       listItemRef.current!.scrollIntoView({
         behavior: "smooth",
@@ -117,7 +121,7 @@ export const Course: React.FC<CourseProps> = ({
       className="coursekit-bg-white dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
     >
       <div
-        className={`sm:coursekit-w-[350px] sm:coursekit-z-0 sm:coursekit-relative coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity  ${
+        className={`sm:coursekit-basis-64 sm:coursekit-z-0 sm:coursekit-relative coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity  ${
           menuOpen
             ? "coursekit-opacity-100 coursekit-block"
             : "coursekit-opacity-0 coursekit-hidden"
