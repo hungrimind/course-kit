@@ -80,7 +80,7 @@ const DesktopView: React.FC<ViewProps> = ({
         <img
           className={`${
             previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
-          } coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5 coursekit-transition-transform `}
+          } coursekit-object-contain coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-transition-transform coursekit-max-w-[90%] coursekit-max-h-[90%]`}
           src={
             content?.previewImage?.startsWith("http") ?? ""
               ? content?.previewImage
@@ -135,7 +135,7 @@ const MobileView: React.FC<ViewProps> = ({
         <img
           className={`${
             previewOpen ? "coursekit-scale-100" : "coursekit-scale-0"
-          } coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-h-4/5  coursekit-max-h-4/5 coursekit-object-contain `}
+          } coursekit-object-contain coursekit-shadow-2xl coursekit-mb-2 coursekit-rounded-xl coursekit-max-w-[90%] coursekit-max-h-[90%]`}
           src={
             content?.previewImage?.startsWith("http") ?? ""
               ? content?.previewImage
@@ -202,7 +202,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
                   >
                     <code
                       className={`coursekit-pl-0 ${highlightTranslator(
-                        content.type
+                        content.type,
                       )}`}
                     >
                       {content.value}

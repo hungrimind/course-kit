@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 @layer base {
-
   .size-default {
     @apply coursekit-h-10 coursekit-px-4 coursekit-py-2;
   }
@@ -117,7 +113,6 @@ hr {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
-
 
 .content-section p {
   @apply coursekit-leading-7;
