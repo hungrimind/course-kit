@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hungrimind/course-kit.git"
+    "url": "git+https://github.com/hungrimind/course-kit.git"
   },
   "author": "Hungrimind (https://hungrimind.com)",
   "keywords": [
