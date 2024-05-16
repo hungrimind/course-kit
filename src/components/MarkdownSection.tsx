@@ -5,10 +5,11 @@ import type { MarkdownSectionProps } from "./Course";
 
 const MarkdownSection: React.FC<MarkdownSectionProps> = (props) => {
   return (
-    <div className="coursekit-h-full coursekit-flex coursekit-flex-col coursekit-p-4 coursekit-pb-16 coursekit-items-center coursekit-justify-center">
-      <Markdown className="md:coursekit-w-1/2" rehypePlugins={[rehypeRaw]}>
-        {props.content}
-      </Markdown>
+    <div className="coursekit-flex coursekit-flex-col coursekit-p-4 coursekit-pb-16 coursekit-max-w-4xl coursekit-mx-auto">
+      <div className="content-section">
+        <h1>{props.heading}</h1>
+        <Markdown rehypePlugins={[rehypeRaw]}>{props.content}</Markdown>
+      </div>
     </div>
   );
 };

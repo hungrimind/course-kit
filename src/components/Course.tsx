@@ -71,7 +71,7 @@ export const Course: React.FC<CourseProps> = ({
   const divRef = React.useRef<HTMLDivElement>(null);
 
   const [cookieArray, setCookieArray] = React.useState<string[] | undefined>(
-    undefined,
+    undefined
   );
 
   //retrieve the index from cookies and set it to currentIndex
@@ -112,6 +112,11 @@ export const Course: React.FC<CourseProps> = ({
   React.useEffect(() => {
     if (onIndexChange) {
       onIndexChange(currentIndex);
+    }
+    if (divRef.current) {
+      divRef.current.scrollTo({
+        top: 0,
+      });
     }
   }, [currentIndex]);
 

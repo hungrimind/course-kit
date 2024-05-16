@@ -5,21 +5,23 @@ import type { HeaderSectionProps } from "./Course";
 
 const HeaderSection: React.FC<HeaderSectionProps> = (props) => {
   return (
-    <div>
-      <div className="coursekit-flex coursekit-flex-col coursekit-items-center coursekit-w-full coursekit-text-center container coursekit-pb-16">
-        <div className="coursekit-text-6xl coursekit-font-bold coursekit-pt-16">
+    <div className="coursekit-px-2 md:coursekit-px-4">
+      <div className="coursekit-flex coursekit-flex-col coursekit-items-center coursekit-pb-16">
+        <div className="coursekit-text-5xl md:coursekit-text-6xl coursekit-font-bold coursekit-pt-32 coursekit-text-center">
           {props.headline}
         </div>
-        <p className="coursekit-mt-4 coursekit-text-2xl">{props.subheadline}</p>
+        <p className="coursekit-mt-4 coursekit-text-xl md:coursekit-text-2xl coursekit-text-center">
+          {props.subheadline}
+        </p>
         <img
-          className="coursekit-pt-16 coursekit-w-full"
+          className="coursekit-pt-16 md:coursekit-max-w-7xl md:coursekit-px-8 coursekit-pb-8 coursekit-max-h-[600px]"
           src={
             props.image.startsWith("http")
               ? props.image
               : `https://hungrimind.com/${props.image}`
           }
         />
-        <div className="md:coursekit-w-1/2 text-start">
+        <div className="coursekit-w-full coursekit-max-w-4xl content-section ">
           <Markdown rehypePlugins={[rehypeRaw]}>{props.content}</Markdown>
         </div>
 

@@ -23,33 +23,33 @@
     @apply coursekit-w-full coursekit-h-full coursekit-flex coursekit-items-center coursekit-justify-center active:coursekit-scale-75 coursekit-transition-transform;
   }
 }
+
+body{
+  @apply coursekit-text-lg;
+}
+
 b {
   @apply coursekit-font-bold;
 }
-
-p {
-  @apply coursekit-mb-2;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply coursekit-leading-tight coursekit-mb-1 coursekit-pb-2;
+  @apply coursekit-leading-tight coursekit-font-bold coursekit-pb-8;
 }
 h1 {
-  @apply coursekit-text-5xl;
+  @apply coursekit-text-5xl coursekit-pt-16;
 }
 h2 {
-  @apply coursekit-text-4xl;
+  @apply coursekit-text-4xl coursekit-pt-8;
 }
 h3 {
-  @apply coursekit-text-2xl;
+  @apply coursekit-text-2xl coursekit-pt-4;
 }
 h4 {
-  @apply coursekit-text-xl;
+  @apply coursekit-text-xl coursekit-pt-2;
 }
 h5 {
   @apply coursekit-text-lg;
@@ -90,11 +90,6 @@ hr {
   @apply coursekit-border-none coursekit-border-t coursekit-border-gray-200;
 }
 
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-}
 
 .sr-only {
   border: 0;
@@ -115,7 +110,7 @@ hr {
 }
 
 .content-section p {
-  @apply coursekit-leading-7;
+  @apply coursekit-leading-7 coursekit-pb-6;
 }
 
 .content-section a {
@@ -123,26 +118,23 @@ hr {
 }
 
 .content-section ul {
-  list-style-type: disc;
-  @apply coursekit-leading-5 coursekit-ml-4;
+  @apply coursekit-list-disc coursekit-list-inside coursekit-pb-6 coursekit-ml-2; 
+}
+
+.content-section ul ul{
+  @apply coursekit-ml-6 coursekit-pb-0 coursekit-mb-0; 
 }
 
 .content-section ol {
-  list-style-type: decimal;
-  @apply coursekit-leading-5 coursekit-ml-4;
+  @apply coursekit-list-decimal coursekit-list-inside coursekit-pb-6 coursekit-ml-2;
+}
+
+.content-section ol ol{
+  @apply coursekit-ml-6 coursekit-pb-0 coursekit-mb-0; 
 }
 
 .content-section pre {
-  @apply coursekit-bg-gray-100 dark:coursekit-bg-gray-800 coursekit-rounded-md coursekit-p-4;
-}
-
-.content-section h1,
-.content-section h2,
-.content-section h3,
-.content-section h4,
-.content-section h5,
-.content-section h6 {
-  @apply coursekit-pb-8;
+  @apply coursekit-bg-gray-100 dark:coursekit-bg-gray-800 coursekit-rounded-md coursekit-p-4 coursekit-overflow-auto;
 }
 
 .content-section blockquote {
@@ -155,4 +147,8 @@ hr {
 
 .content-section ul {
   @apply coursekit-mb-4;
+}
+
+.content-section img {
+  @apply coursekit-rounded-md coursekit-shadow coursekit-max-h-[400px]  ;
 }

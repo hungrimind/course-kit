@@ -32,4 +32,16 @@ The JSON file is a course id followed by a list of **lessons**. There are 3 less
 |                                                | `content`      | Markdown.                                                                                                                      |
 |                                                | `heading`      | Title. Used for table of contents as well.                                                                                     |
 
+## Local development
 
+### First run
+
+1. Clone this repository
+2. run `make link` 
+3. run `make install`
+4. run `make watch`
+5. run either `make astro` or `make next` depending on which framework you want to use.
+
+### Subsequent runs
+
+Run step 4 and 5 from the above list.

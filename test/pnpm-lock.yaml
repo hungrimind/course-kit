@@ -28,6 +28,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.0.1
     version: 10.4.17(postcss@8.4.35)
+  course-kit:
+    specifier: link:../course-kit
+    version: link:../course-kit
   eslint:
     specifier: ^8
     version: 8.56.0
