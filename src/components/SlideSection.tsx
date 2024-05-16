@@ -109,12 +109,12 @@ const MobileView: React.FC<ViewProps> = ({
       <div className="content-section coursekit-overflow-hidden coursekit-p-4">
         <div>
           <h2
-            className={`coursekit-px-4 coursekit-text-4xl coursekit-font-bold sm:coursekit-transition-opacity coursekit-duration-500`}
+            className={` coursekit-text-4xl coursekit-font-bold sm:coursekit-transition-opacity coursekit-duration-500`}
           >
             {content?.heading}
           </h2>
           <p
-            className={`coursekit-px-4 coursekit-pb-16 sm:coursekit-transition-opacity coursekit-duration-500 `}
+            className={` coursekit-pb-16 sm:coursekit-transition-opacity coursekit-duration-500 `}
           >
             <Markdown rehypePlugins={[rehypeRaw]}>{content?.content}</Markdown>
           </p>
@@ -202,7 +202,7 @@ function CodeImageThing({ content }: CodeImageThingProps) {
                   >
                     <code
                       className={`coursekit-pl-0 ${highlightTranslator(
-                        content.type,
+                        content.type
                       )}`}
                     >
                       {content.value}
