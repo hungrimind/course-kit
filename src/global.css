@@ -150,5 +150,5 @@ hr {
 }
 
 .content-section img {
-  @apply coursekit-rounded-md coursekit-shadow coursekit-max-h-[400px]  ;
+  @apply coursekit-rounded-md coursekit-max-h-[400px]  ;
 }
