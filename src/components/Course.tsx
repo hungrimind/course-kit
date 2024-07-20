@@ -71,7 +71,7 @@ export const Course: React.FC<CourseProps> = ({
   const divRef = React.useRef<HTMLDivElement>(null);
 
   const [cookieArray, setCookieArray] = React.useState<string[] | undefined>(
-    undefined
+    undefined,
   );
 
   //retrieve the index from cookies and set it to currentIndex
@@ -126,7 +126,7 @@ export const Course: React.FC<CourseProps> = ({
       className="coursekit-bg-white dark:coursekit-bg-neutral-950 dark:coursekit-text-white coursekit-flex coursekit-h-full coursekit-w-full coursekit-relative"
     >
       <div
-        className={`sm:coursekit-basis-64 sm:coursekit-z-0 sm:coursekit-relative coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity  ${
+        className={`sm:coursekit-basis-96 sm:coursekit-z-0 sm:coursekit-relative coursekit-border-r dark:coursekit-border-r-neutral-700 coursekit-overflow-y-auto coursekit-transition-opacity  ${
           menuOpen
             ? "coursekit-opacity-100 coursekit-block"
             : "coursekit-opacity-0 coursekit-hidden"
@@ -146,50 +146,56 @@ export const Course: React.FC<CourseProps> = ({
             </div>
           </div>
           <ul className="coursekit-py-4 coursekit-px-4">
-            {lessons.map((section, index) => (
-              <li key={index}>
-                <button
-                  onClick={() => {
-                    setIndex(index);
-                    document.cookie = `current-position-for-${id}=${section.id}`;
+            {lessons.map((section, index) => {
+              if (section.sectionType != "header" && section.heading?.includes('Section')) {
+                return <li key={index} className="coursekit-mt-6 coursekit-text-xs coursekit-text-neutral-500 coursekit-font-medium coursekit-p-2">{section.heading}</li>;
+              }
 
-                    setPreviewOpen(false);
+              return (
+                <li key={index}>
+                  <button
+                    onClick={() => {
+                      setIndex(index);
+                      document.cookie = `current-position-for-${id}=${section.id}`;
 
-                    // if screen is small, close the menu
-                    if (window.innerWidth < 640) {
-                      setMenuOpen(false);
-                    }
-                  }}
-                  ref={index === currentIndex ? listItemRef : undefined}
-                  className={`coursekit-block coursekit-w-full coursekit-p-2 coursekit-text-left ${
-                    menuHoverColor != null
-                      ? menuHoverColor
-                      : "hover:coursekit-bg-neutral-100 dark:hover:coursekit-bg-neutral-800"
-                  }  ${
-                    index === currentIndex
-                      ? `${
-                          menuSelectedColor != null
-                            ? menuSelectedColor
-                            : "coursekit-bg-neutral-200 dark:coursekit-bg-neutral-700"
-                        } coursekit-rounded`
-                      : ""
-                  } ${
-                    cookieArray?.includes(section.id.toString())
-                      ? "dark:coursekit-text-green-300 coursekit-text-green-600"
-                      : ""
-                  }`}
-                >
-                  {(() => {
-                    switch (section.sectionType) {
-                      case "header":
-                        return <span>Introduction</span>;
-                      default:
-                        return <span>{section.heading}</span>;
-                    }
-                  })()}
-                </button>
-              </li>
-            ))}
+                      setPreviewOpen(false);
+
+                      // if screen is small, close the menu
+                      if (window.innerWidth < 640) {
+                        setMenuOpen(false);
+                      }
+                    }}
+                    ref={index === currentIndex ? listItemRef : undefined}
+                    className={`coursekit-text-sm coursekit-text-neutral-800 coursekit-block coursekit-w-full coursekit-p-2 coursekit-text-left ${
+                      menuHoverColor != null
+                        ? menuHoverColor
+                        : "hover:coursekit-bg-neutral-100 dark:hover:coursekit-bg-neutral-800"
+                    }  ${
+                      index === currentIndex
+                        ? `${
+                            menuSelectedColor != null
+                              ? menuSelectedColor
+                              : "coursekit-bg-neutral-200 dark:coursekit-bg-neutral-700"
+                          } coursekit-rounded`
+                        : ""
+                    } ${
+                      cookieArray?.includes(section.id.toString())
+                        ? "dark:coursekit-text-green-300 coursekit-text-green-600"
+                        : ""
+                    }`}
+                  >
+                    {(() => {
+                      switch (section.sectionType) {
+                        case "header":
+                          return <span>Introduction</span>;
+                        default:
+                          return <span>{section.heading}</span>;
+                      }
+                    })()}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
