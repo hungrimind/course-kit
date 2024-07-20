@@ -6,26 +6,26 @@ import type { HeaderSectionProps } from "./Course";
 const HeaderSection: React.FC<HeaderSectionProps> = (props) => {
   return (
     <div className="coursekit-px-2 md:coursekit-px-4">
-      <div className="coursekit-flex coursekit-flex-col coursekit-items-center coursekit-pb-16">
-        <div className="coursekit-text-5xl md:coursekit-text-6xl coursekit-font-bold coursekit-pt-32 coursekit-text-center">
+      <div className="coursekit-flex coursekit-flex-col coursekit-pb-16  coursekit-max-w-4xl coursekit-mx-auto">
+        <div className="coursekit-text-5xl md:coursekit-text-6xl coursekit-font-bold coursekit-pt-32">
           {props.headline}
         </div>
-        <p className="coursekit-mt-4 coursekit-text-xl md:coursekit-text-2xl coursekit-text-center">
+        <p className="coursekit-mt-4 coursekit-text-xl md:coursekit-text-2xl">
           {props.subheadline}
         </p>
         <img
-          className="coursekit-pt-16 md:coursekit-max-w-7xl md:coursekit-px-8 coursekit-pb-8 coursekit-max-h-[600px]"
+          className="coursekit-pt-16 md:coursekit-max-w-7xl md:coursekit-px-8 coursekit-pb-8 coursekit-max-h-[600px] coursekit-my-4"
           src={
             props.image.startsWith("http")
               ? props.image
               : `https://hungrimind.com/${props.image}`
           }
         />
-        <div className="coursekit-w-full coursekit-max-w-4xl content-section ">
+        <div className="coursekit-w-full content-section ">
           <Markdown rehypePlugins={[rehypeRaw]}>{props.content}</Markdown>
         </div>
 
-        <div className="coursekit-flex coursekit-justify-center coursekit-p-2 coursekit-space-x-4">
+        <div className="coursekit-flex coursekit-p-2 coursekit-space-x-4">
           {props.links.map((link, index) => (
             <a
               key={index}
@@ -46,12 +46,6 @@ const HeaderSection: React.FC<HeaderSectionProps> = (props) => {
             </a>
           ))}
         </div>
-        <p
-          id="setup"
-          className="coursekit-mt-16 coursekit-pb-8 coursekit-text-2xl"
-        >
-          ⬅ Click the check button to get started
-        </p>
       </div>
     </div>
   );
